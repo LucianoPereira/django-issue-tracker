@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+<project class="media content-section">
+    <div class="media-body">
+        <div class="project-metadata">
+            <a class="mr-2" href="{% url 'projects:user-projects' username=object.creator.username %}">{{ object.creator }}</a>
+            <small class="text-muted">{{ object.created_on|date:"d-m-Y" }}</small>
+            {% if object.creator == user %}
+            <div>
+                <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'projects:project-update' object.pk %}">Update</a>
+                <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'projects:project-delete' object.pk %}">Delete</a>
+                <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'issues:issue-create' project_id=object.pk %}">Create Issue</a>
+
+            </div>
+            {% endif %}
+        </div>
+        <h2 class="project-title">{{ object.title }}</h2>
+        <p class="project-content">{{ object.description }}</p>
+        <div class="media-body">
+            {% for issue in object.issue_set.all %}
+            <project class="media content-section">
+                {% if issue.owner %}
+                <div class="img-with-text">
+                    <img class="rounded-circle account-img" src="{{ issue.owner.profile.image.url }}">
+                    <small class="text-muted">Owner: {{ issue.owner }}</small>
+                </div>
+                {% endif %}
+                {% for user in issue.users.all %}
+                <div class="img-with-text">
+                    <img class="rounded-circle small-account-img" src="{{ user.profile.image.url }}">
+                    <small class="text-muted">{{ user }}</small>
+                </div>
+                {% endfor %}
+                <div class="media-body">
+                    <div class="project-metadata">
+                        <a class="mr-2" href="#"><center>Created by {{ issue.creator }}</center></a>
+                    </div>
+                    <h2 class="project-title"><a href="{% url 'issues:issue-detail' project_id=object.id pk=issue.pk %}"><center>{{ issue.title }}</center></a></h2>
+                </div>
+            </project>
+            {% endfor %}
+        </div>
+    </div>
+
+</project>
+{% endblock content %}
