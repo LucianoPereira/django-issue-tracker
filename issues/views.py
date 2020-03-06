@@ -49,17 +49,9 @@ class IssueCreateView(LoginRequiredMixin, CreateView):
         model = Issue
         fields = ['title', 'details', 'priority', 'status', 'estimated_work_hours', 'loaded_work_hours']
 
-        def dispatch(self, request, *args, **kwargs):
-            """
-            Overridden so we can make sure the `Ipsum` instance exists
-            before going any further.
-            """
-            self.project = kwargs.get('project_id')
-            return super().dispatch(request, *args, **kwargs)
-
         def form_valid(self, form):
+            form.instance.project = get_object_or_404(Project, pk=self.kwargs['project_id'])
             form.instance.creator = self.request.user
-            form.instance.project = self.project
             return super().form_valid(form)
 
 

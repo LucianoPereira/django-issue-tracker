@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 <h1>Issues owned by {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h1>
+<div>
+    <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'projects:user-projects' view.kwargs.username %}">{{ view.kwargs.username }}'s Projects</a>
+</div>
 {% for issue in object_list %}
 <project class="media content-section">
     <img class="rounded-circle account-img" src="{{ issue.creator.profile.image.url }}">

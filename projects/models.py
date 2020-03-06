@@ -25,9 +25,21 @@ class Project(models.Model):
 
     def progress_percentage(self):
         try:
-            return int((self.loaded_work_hours() / self.estimated_work_hours()) * 100)
+            progress = int((self.loaded_work_hours() / self.estimated_work_hours()) * 100)
+            if progress < 100:
+                return progress
+            return 100
         except ValueError:
             return 0
+
+    def project_issues_status(self):
+        status_count = {}
+        for issue in self.issue_set.all():
+            if issue.status in status_count:
+                status_count[issue.status] += 1
+            else:
+                status_count[issue.status] = 1
+        return status_count
 
     def get_absolute_url(self):
         return reverse('projects:project-detail', kwargs={'pk': self.pk})

@@ -28,7 +28,7 @@ class Issue(models.Model):
     priority = models.IntegerField(null=False, default=5, validators=[MinValueValidator(1), MaxValueValidator(5)])
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    closed_on = models.DateTimeField(blank=True)
+    closed_on = models.DateTimeField(null=True, blank=True)
     status = models.CharField(default=IssueStatusChoices.CREATED, max_length=50, choices=IssueStatusChoices.choices())
     estimated_work_hours = models.IntegerField(null=True, validators=[MinValueValidator(0)])
     loaded_work_hours = models.IntegerField(default=0, validators=[MinValueValidator(0)])
@@ -38,10 +38,6 @@ class Issue(models.Model):
 
     def get_absolute_url(self):
         return reverse('issues:issue-detail', kwargs={'project_id': self.project.id, 'pk': self.pk})
-
-    def save(self, **kwargs):
-        self.project = kwargs.get('project')
-        super().save()
 
 
 class Comment(models.Model):

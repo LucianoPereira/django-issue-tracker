@@ -20,9 +20,17 @@
         </div>
         <h2 class="project-title">{{ project.title }}</h2>
         <p class="project-content">{{ project.description }}</p>
-        <div class="progress" style="margin-bottom: 10px;">
-            <div class="progress-bar" role="progressbar"  16px; style="width: {{ project.progress_percentage  }}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{ project.progress_percentage }} % Completed</div>
+        <div class="progress" style="height: 25px; margin-bottom: 10px;">
+            <div class="progress-bar" role="progressbar"  16px; style=" width: {{ project.progress_percentage  }}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{ project.progress_percentage }} % Completed</div>
         </div>
+        <div style="margin-bottom: 10px;">
+            <ul>
+                {% for key, value in project.project_issues_status.items %}
+            <li class="list-group-item list-group-item-light"> {{ key }} Issues: {{value}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
         <div class="media-body">
             {% for object in object_list %}
             <project class="media content-section">
@@ -43,11 +51,15 @@
                         <a class="mr-2" href="{% url 'issues:user-issues' object.creator.username %}">
                             <center>Created by {{ object.creator }}</center>
                         </a>
+
                     </div>
                     <h2 class="project-title"><a
                             href="{% url 'issues:issue-detail' project_id=object.project.id pk=object.pk %}">
                         <center>{{ object.title }}</center>
-                    </a></h2>
+                    </a>
+                    </h2>
+                    <small><center>Status: {{ object.status }}</center></small>
+
                 </div>
             </project>
             {% endfor %}
