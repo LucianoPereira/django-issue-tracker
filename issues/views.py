@@ -10,11 +10,19 @@ from django.views.generic import (
     UpdateView,
     DeleteView
 )
+from .forms import IssueForm
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 
-class IssueDetailView(DetailView):
+class IssueDetailView(UserPassesTestMixin, DetailView):
     model = Issue
+
+    def test_func(self):
+        if self.request.user in self.get_object().users.all() \
+                or self.request.user == self.get_object().creator\
+                or self.request.user == self.get_object().owner:
+            return True
+        return False
 
 
 class UserIssueListView(ListView):
@@ -47,17 +55,18 @@ class ProjectIssueListView(ListView):
 
 class IssueCreateView(LoginRequiredMixin, CreateView):
         model = Issue
-        fields = ['title', 'details', 'priority', 'status', 'estimated_work_hours', 'loaded_work_hours']
+        form_class = IssueForm
 
         def form_valid(self, form):
             form.instance.project = get_object_or_404(Project, pk=self.kwargs['project_id'])
             form.instance.creator = self.request.user
+
             return super().form_valid(form)
 
 
 class IssueUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Issue
-    fields = ['title', 'details', 'priority', 'status', 'estimated_work_hours', 'loaded_work_hours']
+    form_class = IssueForm
 
     def test_func(self):
         issue = self.get_object()

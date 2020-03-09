@@ -75,6 +75,7 @@
     <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'issues:issue-create' project_id=project.id %}">Create Issue</a>
 </div>
 {% endif %}
+
 {% if is_paginated %}
     {% if page_obj.has_previous %}
         <a class="btn btn-outline-info mb-4" href="?page=1">First</a>
