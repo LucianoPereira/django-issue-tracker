@@ -12,7 +12,6 @@ class IssueForm(forms.ModelForm):
                   'owner',
                   'users',
                   'estimated_work_hours',
-                  'loaded_work_hours'
                   ]
         labels = {
             'users': 'Observers'

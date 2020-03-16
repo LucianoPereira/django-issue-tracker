@@ -12,6 +12,8 @@ from django.views.generic import (
 )
 from .forms import IssueForm
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib import messages
+from django.http import HttpResponseRedirect
 
 
 class IssueDetailView(UserPassesTestMixin, DetailView):
@@ -85,7 +87,26 @@ class IssueDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         return False
 
     def get_success_url(self):
-        return reverse_lazy('projects:project-detail', kwargs={'pk': self.object.project.pk})
+        return reverse_lazy('issues:project-issues', kwargs={'project_id': self.object.project.pk})
+
+
+def ownership_view(request, project_id, pk):
+    issue = get_object_or_404(Issue, pk=pk)
+    if not issue.owner:
+        if request.method == "POST":
+            issue.owner = request.user
+            messages.info(request, 'You have taken ownership successfully')
+            issue.save()
+            return HttpResponseRedirect(reverse_lazy('issues:issue-detail', kwargs={'project_id': project_id, 'pk': pk}))
+        else:
+            context = {}
+            context['project_id'] = project_id
+            context['pk'] = pk
+            context['issue'] = issue
+            return render(request, 'issues/confirm_ownership.html', context)
+    else:
+        messages.warning(request, 'This issue already has an owner')
+    return HttpResponseRedirect(reverse_lazy('issues:project-issues', kwargs={'project_id': project_id}))
 
 
 def about(request):
