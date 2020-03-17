@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec8621c5-582f-4833-a55f-3bb315286464" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/issues/templates/issues/confirm_ownership.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/issue_tracker/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/issue_tracker/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/issue_tracker/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/issue_tracker/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/issues/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/issues/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/issues/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/issues/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/issues/templates/issues/issue_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/issues/templates/issues/issue_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/issues/templates/issues/project_issues.html" beforeDir="false" afterPath="$PROJECT_DIR$/issues/templates/issues/project_issues.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/issues/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/issues/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/issues/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/issues/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/templates/projects/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/templates/projects/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static_files/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static_files/main.css" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +48,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projects/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
+            <state relative-caret-position="515">
               <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
@@ -72,7 +60,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/issues/templates/issues/project_issues.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
+            <state relative-caret-position="1212">
               <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
             </state>
           </provider>
@@ -110,8 +98,8 @@
       <find>userd</find>
       <find>contrib</find>
       <find>messa</find>
-      <find>htt</find>
       <find>asd</find>
+      <find>htt</find>
     </findStrings>
     <replaceStrings>
       <replace>Issue</replace>
@@ -178,7 +166,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="240" />
     <option name="y" value="126" />
     <option name="width" value="1440" />
@@ -276,7 +264,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
@@ -635,12 +623,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/issues/urls.py">
+    <entry file="file://$PROJECT_DIR$/projects/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="19" column="79" lean-forward="true" selection-start-line="19" selection-start-column="79" selection-end-line="19" selection-end-column="79" />
+        <state relative-caret-position="515">
+          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
           <folding>
-            <element signature="e#0#28#0" expanded="true" />
+            <element signature="e#0#54#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -652,12 +640,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/projects/views.py">
+    <entry file="file://$PROJECT_DIR$/issues/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="78" lean-forward="true" selection-start-line="78" selection-end-line="78" />
+        <state relative-caret-position="364">
+          <caret line="19" column="79" lean-forward="true" selection-start-line="19" selection-start-column="79" selection-end-line="19" selection-end-column="79" />
           <folding>
-            <element signature="e#0#54#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -674,7 +662,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/issues/templates/issues/project_issues.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
+        <state relative-caret-position="1212">
           <caret line="64" column="31" selection-start-line="64" selection-start-column="31" selection-end-line="64" selection-end-column="31" />
         </state>
       </provider>
