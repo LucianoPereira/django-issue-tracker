@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ec8621c5-582f-4833-a55f-3bb315286464" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/issues/templates/issues/project_issues.html" beforeDir="false" afterPath="$PROJECT_DIR$/issues/templates/issues/project_issues.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/issues/templates/issues/user_issues.html" beforeDir="false" afterPath="$PROJECT_DIR$/issues/templates/issues/user_issues.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/issues/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/issues/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,8 +16,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/issues/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="92" column="21" lean-forward="true" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="21" />
+            <state relative-caret-position="272">
+              <caret line="37" column="41" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -36,7 +37,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/issue_tracker/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="614">
+            <state relative-caret-position="554">
               <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
@@ -66,7 +67,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/issues/templates/issues/project_issues.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="161">
@@ -75,12 +76,19 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/issues/templates/issues/user_issues.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="341">
+              <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>by</find>
-      <find>style</find>
       <find>update</find>
       <find>casca</find>
       <find>crisp</find>
@@ -109,6 +117,8 @@
       <find>debug</find>
       <find>urlconf</find>
       <find>htt</find>
+      <find>owner:</find>
+      <find>users</find>
     </findStrings>
     <replaceStrings>
       <replace>Issue</replace>
@@ -157,7 +167,6 @@
         <option value="$PROJECT_DIR$/projects/models.py" />
         <option value="$PROJECT_DIR$/projects/urls.py" />
         <option value="$PROJECT_DIR$/projects/templates/projects/user_projects.html" />
-        <option value="$PROJECT_DIR$/issues/templates/issues/user_issues.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/projects/templates/projects/about.html" />
         <option value="$PROJECT_DIR$/issues/forms.py" />
@@ -168,10 +177,11 @@
         <option value="$PROJECT_DIR$/issues/urls.py" />
         <option value="$PROJECT_DIR$/projects/views.py" />
         <option value="$PROJECT_DIR$/issues/templates/issues/confirm_ownership.html" />
-        <option value="$PROJECT_DIR$/issues/views.py" />
         <option value="$PROJECT_DIR$/issue_tracker/settings.py" />
         <option value="$PROJECT_DIR$/issue_tracker/urls.py" />
         <option value="$PROJECT_DIR$/issues/templates/issues/project_issues.html" />
+        <option value="$PROJECT_DIR$/issues/views.py" />
+        <option value="$PROJECT_DIR$/issues/templates/issues/user_issues.html" />
       </list>
     </option>
   </component>
@@ -483,13 +493,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/issues/templates/issues/user_issues.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="148" selection-start-line="4" selection-start-column="148" selection-end-line="4" selection-end-column="148" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/projects/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
@@ -630,16 +633,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/issues/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="92" column="21" lean-forward="true" selection-start-line="92" selection-start-column="21" selection-end-line="92" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/issue_tracker/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="417">
@@ -664,9 +657,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/issues/templates/issues/project_issues.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="37" column="95" selection-start-line="37" selection-start-column="95" selection-end-line="37" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/issues/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="37" column="41" selection-start-line="37" selection-start-column="41" selection-end-line="37" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/issue_tracker/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="614">
+        <state relative-caret-position="554">
           <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
@@ -674,10 +684,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/issues/templates/issues/project_issues.html">
+    <entry file="file://$PROJECT_DIR$/issues/templates/issues/user_issues.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="37" column="95" selection-start-line="37" selection-start-column="95" selection-end-line="37" selection-end-column="95" />
+        <state relative-caret-position="341">
+          <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
         </state>
       </provider>
     </entry>

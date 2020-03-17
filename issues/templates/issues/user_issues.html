@@ -6,10 +6,10 @@
 </div>
 {% for issue in object_list %}
 <project class="media content-section">
-    <img class="rounded-circle account-img" src="{{ issue.creator.profile.image.url }}">
+    <img class="rounded-circle account-img" src="{{ issue.owner.profile.image.url }}">
     <div class="media-body">
         <div class="project-metadata">
-            <a class="mr-2" href="{% url 'issues:user-issues' username=issue.creator.username %}">{{ issue.creator }}</a>
+            <a class="mr-2" href="{% url 'issues:user-issues' username=issue.owner.username %}">{{ issue.owner }}</a>
         </div>
         <h3><a class="project-title" href="{% url 'issues:issue-detail' project_id=issue.project.id pk=issue.pk %}">{{ issue.title }}</a></h3>
         <p class="project-content">{{ issue.description }}</p>

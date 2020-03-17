@@ -35,7 +35,7 @@ class UserIssueListView(ListView):
 
     def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
-        return Issue.objects.filter(creator=user).order_by('-created_on')
+        return Issue.objects.filter(owner=user).order_by('-created_on')
 
 
 class ProjectIssueListView(ListView):
