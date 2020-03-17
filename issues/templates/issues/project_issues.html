@@ -35,7 +35,7 @@
                 {% if object.owner %}
                 <div class="img-with-text">
                     <img class="rounded-circle account-img" src="{{ object.owner.profile.image.url }}">
-                    <small class="text-muted"><a href="{% url 'issues:user-issues' object.creator.username %}">Owner: {{ object.owner }}</a></small>
+                    <small class="text-muted"><a href="{% url 'issues:user-issues' object.owner.username %}">Owner: {{ object.owner }}</a></small>
                 </div>
                 {% endif %}
                 {% for user in object.users.all %}
