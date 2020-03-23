@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<h1>Projects by {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h1>
+<h1>Projects by {{ view.kwargs.username }} <span class="badge badge-secondary">{{ page_obj.paginator.count }}</span></h1>
 <div>
     <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'issues:user-issues' view.kwargs.username %}">{{ view.kwargs.username }}'s Issues</a>
 </div>
