@@ -34,7 +34,7 @@ class UserIssueListView(ListView):
     paginate_by = 4
 
     def get_queryset(self):
-        user = get_object_or_404(User, username=self.kwargs.get('username'))
+        user = get_object_or_404(User, username=self.kwargs['username'])
         return Issue.objects.filter(owner=user).order_by('-created_on')
 
 
