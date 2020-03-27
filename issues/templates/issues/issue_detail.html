@@ -5,17 +5,17 @@
         <div class="project-metadata">
             <a class="mr-2" href="#">{{ object.creator }}</a>
             <small class="text-muted">{{ object.created_on|date:"d-m-Y" }}</small>
-            {% if object.creator == user or object.owner == user %}
+            {% if object.creator == user %}
             <div>
                 <a class="btn btn-secondary btn-sm mt-1 mb-1"
                    href="{% url 'issues:issue-update' project_id=object.project.id pk=object.pk %}">Update</a>
                 <a class="btn btn-danger btn-sm mt-1 mb-1"
                    href="{% url 'issues:issue-delete' project_id=object.project.id pk=object.pk %}">Delete</a>
+            {% endif %}
                 <object align="right"><a class="btn btn-secondary btn-sm mt-1 mb-1"
                                          href="{% url 'issues:project-issues' project_id=object.project.id %}">&laquo;
                     Back to Project</a></object>
             </div>
-            {% endif %}
         </div>
         <h2 class="project-title">{{ object.title }}</h2>
         <div class="attribute-item">
