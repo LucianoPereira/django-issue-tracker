@@ -29,7 +29,7 @@ class Issue(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     closed_on = models.DateTimeField(null=True, blank=True)
-    status = models.CharField(default="CREATED", max_length=50, choices=IssueStatusChoices.choices())
+    status = models.CharField(default=IssueStatusChoices.CREATED.value, max_length=50, choices=IssueStatusChoices.choices())
     estimated_work_hours = models.IntegerField(null=True, validators=[MinValueValidator(0)])
     loaded_work_hours = models.IntegerField(default=0, validators=[MinValueValidator(0)])
 

@@ -8,6 +8,7 @@ from .views import (
     UserIssueListView,
     ProjectIssueListView,
     ownership_view,
+    load_hours_view,
 )
 app_name = 'issues'
 urlpatterns = [
@@ -18,4 +19,5 @@ urlpatterns = [
     path('projects/<int:project_id>/issues/<int:pk>/update/', IssueUpdateView.as_view(), name='issue-update'),
     path('projects/<int:project_id>/issues/<int:pk>/delete/', IssueDeleteView.as_view(), name='issue-delete'),
     path('projects/<int:project_id>/issues/<int:pk>/ownership/', ownership_view, name='issue-ownership'),
+    path('projects/<int:project_id>/issues/<int:pk>/load-hours/', load_hours_view, name='issue-load-hours'),
 ]

@@ -19,3 +19,4 @@ class IssueForm(forms.ModelForm):
         widgets = {
             'users': forms.CheckboxSelectMultiple(),
         }
+

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Load Work</legend>
+            <h2>You are loading hours to issue "{{ issue.title }}"</h2>
+            <div style="display: flex;">
+                <h5 style="margin-right: 10px;"><i>Hours to load:</i></h5>
+                <input type="number" name="hours" style="border-radius: 5px;"></input>
+            </div>
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-danger" type="submit">Yes, Confirm</button>
+            <a class="btn btn-outline-secondary" href="{% url 'issues:issue-detail' project_id=project_id pk=pk %}">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock content %}
