@@ -5,7 +5,7 @@
         <div class="project-metadata">
             <a class="mr-2" href="#">{{ object.creator }}</a>
             <small class="text-muted">{{ object.created_on|date:"d-m-Y" }}</small>
-            {% if object.creator == user %}
+            {% if object.creator == user or object.owner == user %}
             <div>
                 <a class="btn btn-secondary btn-sm mt-1 mb-1"
                    href="{% url 'issues:issue-update' project_id=object.project.id pk=object.pk %}">Update</a>
