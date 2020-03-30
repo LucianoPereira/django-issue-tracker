@@ -16,21 +16,28 @@
                    href="{% url 'issues:issue-create' project_id=project.pk %}">Create Issue</a>
             </div>
             {% endif %}
-        <h2 class="project-title">{{ project.title }}</h2>
-        <p class="project-content">{{ project.description }}</p>
-        <div class="progress" style="height: 25px; margin-bottom: 10px;">
-            <div class="progress-bar" role="progressbar"  16px; style=" width: {{ project.progress_percentage  }}%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{ project.progress_percentage }} % Completed</div>
-        </div>
-        <div style="margin-bottom: 10px;">
+            <div class="attribute-item">
+                <h2 class="project-title">{{ project.title }}</h2>
+                <p class="project-content">{{ project.description }}</p>
+            </div>
+
+            <p style="margin-top: 15px; text-align:center;">Project's progress</p>
+            <div id="progressbar" >
+                <div style=" width: {{ project.progress_percentage  }}%;">
+                    {{ project.progress_percentage }}%</div>
+            </div>
+
+        <div style="margin-bottom: 10px; margin-top: 15px;">
             <ul>
                 {% for key, value in project.project_issues_status.items %}
-            <li class="list-group-item list-group-item-light"> {{ key }} Issues: {{value}}</li>
+            <li class="list-group-item list-group-item-light"> {{ key|lower|capfirst }} Issues: {{value}}</li>
                 {% endfor %}
             </ul>
         </div>
 
         <div class="media-body">
             {% for object in object_list %}
+            {% if object.status != "CLOSED" %}
             <project class="media content-section">
                 {% if object.owner %}
                 <div class="img-with-text">
@@ -65,6 +72,7 @@
                     {% endif %}
                 </div>
             </project>
+            {% endif %}
             {% endfor %}
         </div>
     </div>

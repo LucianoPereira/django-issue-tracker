@@ -35,6 +35,10 @@
             <a class="btn btn-secondary btn-sm mt-1 mb-1" style="self-align: right;"
                href="{% url 'issues:issue-load-hours' project_id=object.project.id pk=object.pk %}">Load Hours To Issue</a>
         </div>
+        <div id="close-issue">
+            <a class="btn btn-danger btn-sm mt-1 mb-1"
+               href="{% url 'issues:issue-close' project_id=object.project.id pk=object.pk %}">Close Issue</a>
+        </div>
     </div>
 
 </project>

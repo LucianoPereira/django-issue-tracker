@@ -133,5 +133,25 @@ def load_hours_view(request, project_id, pk):
     return render(request, "issues/issue_confirm_load_hours.html", context)
 
 
+def close_issue_view(request, project_id, pk):
+    issue = get_object_or_404(Issue, pk=pk)
+    if issue.owner == request.user:
+        if request.method == "POST":
+            issue.status = IssueStatusChoices.CLOSED.value
+            issue.save()
+            messages.info(request, 'You have closed the issue')
+            return HttpResponseRedirect(
+                reverse_lazy('issues:project-issues', kwargs={'project_id': project_id}))
+        else:
+            context = {}
+            context['project_id'] = project_id
+            context['pk'] = pk
+            context['issue'] = issue
+            return render(request, 'issues/issue_confirm_close.html', context)
+    else:
+        messages.warning(request, "The issue can only be closed by its owner")
+    return HttpResponseRedirect(reverse_lazy('issues:project-issues', kwargs={'project_id': project_id}))
+
+
 def about(request):
     return render(request, 'issues/about.html', {'title': 'about'})

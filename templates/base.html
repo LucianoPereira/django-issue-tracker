@@ -33,6 +33,7 @@
                 <!-- Navbar Right Side -->
                 <div class="navbar-nav">
                     {% if user.is_authenticated %}
+                    <a class="nav-item nav-link" href="{% url 'issues:user-issues' username=user.username %}">My Issues</a>
                     <a class="nav-item nav-link" href="{% url 'projects:project-create' %}">New Project</a>
                     <a class="nav-item nav-link" href="{% url 'profile' %}">My Profile</a>
                     <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
@@ -70,7 +71,7 @@
                         </a>
                         {% for user in latest_users %}
                         <div class="list-group collapse" id="item-1">
-                            <a href="{% url 'projects:user-projects' username=user.username %}" class="list-group-item">
+                            <a href="{% url 'projects:user-projects' username=user.username %}" style="text-align: center;" class="list-group-item">
                                 <i class="glyphicon glyphicon-chevron-right"></i>{{ user.username }}
                             </a>
                         </div>
