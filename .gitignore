@@ -2,7 +2,8 @@
 *~
 /.vscode
 __pycache__
-myvenv
+issue_tracker_env
 db.sqlite3
 .DS_Store
-/media/profile_pics/
+*.py
+media/profile_pics
