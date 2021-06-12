@@ -6,3 +6,4 @@ myvenv
 db.sqlite3
 .DS_Store
 /media/profile_pics/
+issue_tracker_env
